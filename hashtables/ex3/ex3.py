@@ -2,7 +2,6 @@ def intersection(arrays):
     """
     YOUR CODE HERE
     """
-    full_list = []
     encountered = {}
     result = []
     for array in arrays:
