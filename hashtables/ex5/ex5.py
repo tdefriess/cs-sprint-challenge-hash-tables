@@ -6,7 +6,30 @@ def finder(files, queries):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    results = []
+    result = []
+    index = {}
+    for address in files:
+        path = address.split('/')
+        filename = path[len(path) - 1]
+
+        if filename in index:
+            index[filename] = [index[filename]] + [address]
+        else:
+            index[filename] = address
+
+    for query in queries:
+        if query in index:
+            results.append(index[query])
+
+    for arr in results:
+        if isinstance(arr, str):
+            result.append(arr)
+        else:
+            for string in arr:
+                result.append(string)
+
+    print(result)
 
     return result
 

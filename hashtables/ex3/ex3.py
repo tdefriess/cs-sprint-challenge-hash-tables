@@ -2,7 +2,18 @@ def intersection(arrays):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    encountered = {}
+    result = []
+    for array in arrays:
+        for num in array:
+            if num not in encountered:
+                encountered[num] = 1
+            elif num in result:
+                continue
+            else:
+                result.append(num)
+
+    
 
     return result
 
